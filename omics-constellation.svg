@@ -1,0 +1,103 @@
+<svg width="100%" viewBox="0 0 780 780" xmlns="http://www.w3.org/2000/svg" font-family="'DM Sans', system-ui, sans-serif">
+<defs>
+  <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#1a6b42" stop-opacity="0.14"/>
+    <stop offset="100%" stop-color="#1a6b42" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<circle cx="390" cy="390" r="130" fill="url(#core-glow)"/>
+
+<circle cx="390" cy="390" r="100" fill="none" stroke="#e4e8e0" stroke-width="0.6" stroke-dasharray="3 6"/>
+<circle cx="390" cy="390" r="175" fill="none" stroke="#e4e8e0" stroke-width="0.6" stroke-dasharray="3 6"/>
+<circle cx="390" cy="390" r="255" fill="none" stroke="#e4e8e0" stroke-width="0.6" stroke-dasharray="3 6"/>
+<circle cx="390" cy="390" r="330" fill="none" stroke="#e4e8e0" stroke-width="0.5" stroke-dasharray="2 8"/>
+
+<line x1="390" y1="60"  x2="390" y2="198" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="620" y1="160" x2="514" y2="266" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="720" y1="390" x2="565" y2="390" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="620" y1="620" x2="514" y2="514" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="390" y1="720" x2="390" y2="548" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="160" y1="620" x2="266" y2="514" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="60"  y1="390" x2="215" y2="390" stroke="#e4e8e0" stroke-width="0.8"/>
+<line x1="160" y1="160" x2="266" y2="266" stroke="#e4e8e0" stroke-width="0.8"/>
+
+<!-- INNER RING: Tools at r=175 -->
+<rect x="322" y="198" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="390" y="215" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">GATK · Parabricks</text>
+
+<rect x="446" y="249" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="514" y="266" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">DESeq2 · edgeR</text>
+
+<rect x="497" y="373" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="565" y="390" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">MaxQuant · DIA-NN</text>
+
+<rect x="446" y="497" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="514" y="514" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">MetaboAnalyst · XCMS</text>
+
+<rect x="322" y="548" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="390" y="565" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">LipidSearch · LipidR</text>
+
+<rect x="198" y="497" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="266" y="514" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">MetaPhlAn · Kraken2</text>
+
+<rect x="147" y="373" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="215" y="390" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">MACS3 · deepTools</text>
+
+<rect x="198" y="249" width="136" height="34" rx="7" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="266" y="266" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="500" fill="#1a5236">Squidpy · RCTD</text>
+
+<!-- OUTER RING: Domains at r=330 -->
+<rect x="325" y="34" width="130" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="390" y="52" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Genomics</text>
+<text x="390" y="72" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">WGS · WES · PGX</text>
+
+<rect x="558" y="131" width="130" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="623" y="149" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Transcriptomics</text>
+<text x="623" y="169" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">Bulk · scRNA-seq</text>
+
+<rect x="655" y="364" width="118" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="714" y="382" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Proteomics</text>
+<text x="714" y="402" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">LC-MS · DDA · DIA</text>
+
+<rect x="558" y="597" width="130" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="623" y="615" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Metabolomics</text>
+<text x="623" y="635" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">LC-MS · GC-MS</text>
+
+<rect x="325" y="694" width="130" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="390" y="712" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Lipidomics</text>
+<text x="390" y="732" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">Untargeted · Targeted</text>
+
+<rect x="92" y="597" width="130" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="157" y="615" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Metagenomics</text>
+<text x="157" y="635" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">16S · Shotgun</text>
+
+<rect x="7" y="364" width="118" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="66" y="382" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Epigenomics</text>
+<text x="66" y="402" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">ATAC · ChIP-seq</text>
+
+<rect x="92" y="131" width="130" height="52" rx="10" fill="#1a6b42" stroke="#115030" stroke-width="1"/>
+<text x="157" y="149" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="white">Spatial Omics</text>
+<text x="157" y="169" text-anchor="middle" dominant-baseline="central" font-size="10" fill="rgba(255,255,255,0.72)">Visium · MERFISH</text>
+
+<!-- CENTRE CORE -->
+<circle cx="390" cy="390" r="90" fill="#1a6b42" stroke="#0f4028" stroke-width="1.5"/>
+<circle cx="390" cy="390" r="90" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+<text x="390" y="370" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="white">Multi-Omics</text>
+<text x="390" y="390" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="white">Integration</text>
+<text x="390" y="414" text-anchor="middle" dominant-baseline="central" font-size="9.5" fill="rgba(255,255,255,0.62)">MOFA+ · DIABLO · mixOmics</text>
+
+<!-- Cancer Genomics badge -->
+<rect x="497" y="290" width="136" height="28" rx="14" fill="#1e3a4f" stroke="#2e5a78" stroke-width="1"/>
+<text x="565" y="304" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="600" fill="rgba(255,255,255,0.85)">+ Cancer Genomics</text>
+<line x1="497" y1="304" x2="476" y2="350" stroke="#2e5a78" stroke-width="0.8" stroke-dasharray="3 3"/>
+
+<!-- LEGEND -->
+<rect x="218" y="756" width="12" height="12" rx="2" fill="#1a6b42"/>
+<text x="236" y="762" dominant-baseline="central" font-size="10" fill="#5a6652">Omics domain</text>
+<rect x="330" y="756" width="12" height="12" rx="2" fill="#e8f3ee" stroke="#b8d8c4" stroke-width="1"/>
+<text x="348" y="762" dominant-baseline="central" font-size="10" fill="#5a6652">Analysis tools</text>
+<circle cx="452" cy="762" r="6" fill="#1a6b42"/>
+<text x="464" y="762" dominant-baseline="central" font-size="10" fill="#5a6652">Integration core</text>
+
+</svg>

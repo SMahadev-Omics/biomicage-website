@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — BioOmicsAge</title>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.page-hero { background: linear-gradient(160deg, var(--white) 0%, var(--off-white) 100%); padding: 72px 5% 80px; border-bottom: 1px solid var(--border); }
+.page-hero-inner { max-width: var(--max-w); margin: 0 auto; }
+.page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 4.5vw, 3.6rem); line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.02em; }
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; align-items: start;
+}
+
+/* Left info panel */
+.contact-info { display: flex; flex-direction: column; gap: 24px; }
+.info-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px 24px;
+  display: flex; align-items: flex-start; gap: 14px;
+  transition: all 0.2s;
+}
+.info-card:hover { box-shadow: var(--shadow); border-color: rgba(26,107,66,0.2); }
+.info-icon { font-size: 1.3rem; min-width: 36px; }
+.info-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
+.info-val { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+.info-val a { color: var(--ink); transition: color 0.2s; }
+.info-val a:hover { color: var(--green); }
+
+.response-card {
+  background: var(--green-pale); border: 1px solid rgba(26,107,66,0.18);
+  border-radius: var(--radius-lg); padding: 22px 24px;
+}
+.rc-title { font-weight: 700; font-size: 0.9rem; color: var(--green); margin-bottom: 8px; }
+.rc-text { font-size: 0.83rem; color: var(--ink-light); line-height: 1.65; }
+
+.interest-preview { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px 24px; }
+.ip-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+.ip-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ip-tag { background: var(--tag-bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 10px; font-size: 0.76rem; font-weight: 500; color: var(--ink-soft); }
+
+/* Form */
+.contact-form {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 40px;
+  box-shadow: var(--shadow);
+}
+.form-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 6px; }
+.form-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); }
+.form-label .req { color: var(--green); margin-left: 2px; }
+.form-input, .form-select, .form-textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; color: var(--ink);
+  background: var(--off-white); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 11px 14px;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(26,107,66,0.08);
+  background: var(--white);
+}
+.form-textarea { resize: vertical; min-height: 110px; }
+.form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a9280' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+/* Checkboxes */
+.checkbox-section { margin-bottom: 20px; }
+.checkbox-label { font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); margin-bottom: 12px; display: block; }
+.checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.checkbox-item { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.checkbox-item input[type="checkbox"] { display: none; }
+.checkbox-box {
+  width: 17px; height: 17px; border-radius: 4px;
+  border: 1.5px solid var(--border-mid); background: var(--off-white);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s; font-size: 0.65rem; color: white;
+}
+.checkbox-item input:checked + .checkbox-box {
+  background: var(--green); border-color: var(--green);
+}
+.checkbox-item input:checked + .checkbox-box::after { content: '✓'; }
+.checkbox-text { font-size: 0.8rem; color: var(--ink-soft); }
+
+/* Privacy */
+.privacy-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 24px; font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+.privacy-row input[type="checkbox"] { margin-top: 2px; accent-color: var(--green); flex-shrink: 0; }
+.privacy-row a { color: var(--green); text-decoration: underline; }
+
+.submit-btn {
+  width: 100%; background: var(--green); color: white;
+  border: none; border-radius: var(--radius); padding: 14px;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  box-shadow: 0 2px 10px rgba(26,107,66,0.28);
+}
+.submit-btn:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,107,66,0.35); }
+
+/* Success state */
+.form-success {
+  display: none; text-align: center; padding: 40px 20px;
+}
+.success-icon { font-size: 3rem; margin-bottom: 16px; }
+.success-title { font-family: 'DM Serif Display', serif; font-size: 1.6rem; margin-bottom: 10px; }
+.success-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+@media (max-width:900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .checkbox-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="page-body">
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>BioOmicsAge</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="technology.html">Technology</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+    <button class="nav-hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner fade-up">
+    <div class="badge" style="margin-bottom:20px;">Contact Us</div>
+    <h1>Let's Connect &<br><em style="font-style:italic; color:var(--green)">Collaborate</em></h1>
+    <p style="font-size:1.05rem; color:var(--ink-light); max-width:560px; line-height:1.78; font-weight:300; margin-top:16px;">We're eager to learn about your projects and explore how our multi-omics bioinformatics solutions can support and accelerate your research. We understand your needs and speak your language — let's start a conversation.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-grid">
+
+      <!-- LEFT INFO -->
+      <div class="contact-info fade-up">
+        <div class="info-card">
+          <div class="info-icon"></div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-val"><a href="mailto:contact@bioomigsage.com">contact@bioomigsage.com</a></div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"></div>
+          <div>
+            <div class="info-label">Location</div>
+            <div class="info-val">Bangalore, India</div>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"></div>
+          <div>
+            <div class="info-label">Buisness hours</div>
+            <div class="info-val">Mon–Fri · 9 AM – 6 PM IST</div>
+          </div>
+        </div>
+        <div class="response-card">
+          <div class="rc-title"> Fast Response Guaranteed</div>
+          <div class="rc-text">We respond to all enquiries within 24 hours on business days. For urgent projects, mention your timeline in the message and we'll prioritise accordingly.</div>
+        </div>
+        <div class="interest-preview">
+          <div class="ip-title">Services We Offer</div>
+          <div class="ip-tags">
+            <span class="ip-tag">Proteomics</span>
+            <span class="ip-tag">Lipidomics</span>
+            <span class="ip-tag">WGS / PGX</span>
+            <span class="ip-tag">scRNA-seq</span>
+            <span class="ip-tag">Metagenomics</span>
+            <span class="ip-tag">Metabolomics</span>
+            <span class="ip-tag">Epigenomics</span>
+            <span class="ip-tag">Spatial</span>
+            <span class="ip-tag">Multi-Omics</span>
+            <span class="ip-tag">Cancer Genomics</span>
+            <span class="ip-tag">Custom Pipelines</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form fade-up d2" id="contact-form-wrap">
+        <div class="form-title">Start a Conversation</div>
+        <div class="form-sub">Fill in the form below and we'll get back to you with a project scoping proposal and timeline within 24 hours.</div>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name <span class="req">*</span></label>
+              <input type="text" class="form-input" placeholder="Shalini" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name <span class="req">*</span></label>
+              <input type="text" class="form-input" placeholder="Mahadeva" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Business Email <span class="req">*</span></label>
+              <input type="email" class="form-input" placeholder="you@institution.com" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Telephone</label>
+              <input type="tel" class="form-input" placeholder="+91 00000 00000"/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Organisation / Company <span class="req">*</span></label>
+              <input type="text" class="form-input" placeholder="University / Startup / Hospital" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Country <span class="req">*</span></label>
+              <select class="form-select" required>
+                <option value="">Select country</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Germany</option>
+                <option>Australia</option>
+                <option>Canada</option>
+                <option>Singapore</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Areas of Interest -->
+          <div class="checkbox-section">
+            <span class="checkbox-label">Areas of Interest (select all that apply)</span>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Proteomics</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Lipidomics</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Genomics / WGS / PGX</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Transcriptomics</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">scRNA-seq</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Spatial Transcriptomics</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Metagenomics / Microbiome</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Metabolomics</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Epigenomics / ATAC-seq</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Multi-Omics Integration</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Cancer Genomics</span></label>
+              <label class="checkbox-item"><input type="checkbox"/><div class="checkbox-box"></div><span class="checkbox-text">Custom AI Pipelines</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Message <span class="req">*</span></label>
+            <textarea class="form-textarea" placeholder="Briefly describe your project, dataset, and what you're hoping to understand from the analysis..." required></textarea>
+          </div>
+
+          <div class="privacy-row">
+            <input type="checkbox" required/>
+            <span>I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms & Conditions</a>. By submitting this form, I consent to BioOmicsAge contacting me about my enquiry.</span>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Enquiry →</button>
+        </form>
+
+        <!-- Success message -->
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <div class="success-title">Message Received!</div>
+          <div class="success-text">Thank you for reaching out. We'll review your enquiry and respond within 24 hours with a scoping proposal and next steps.<br/><br/>In the meantime, feel free to explore our <a href="services.html" style="color:var(--green);">services</a> or <a href="technology.html" style="color:var(--green);">technology stack</a>.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div class="footer-brand"><div class="footer-brand-logo"><div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>BioOmicsAge</div><p>Full-stack multi-omics bioinformatics services. Reproducible. Cloud-native. AI-assisted. Based in Bangalore, India.</p></div><div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="technology.html">Technology</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Proteomics</a></li><li><a href="services.html">Lipidomics</a></li><li><a href="services.html">Genomics</a></li><li><a href="services.html">Cancer Genomics</a></li><li><a href="services.html">Multi-Omics</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:contact@bioomigsage.com">contact@bioomigsage.com</a></li><li>Bangalore, India</li></ul></div></div><div class="footer-bottom"><p>© 2026 BioOmicsAge · Bangalore, India · All rights reserved</p><div class="footer-chips"><span class="footer-chip">Python · R</span><span class="footer-chip">Nextflow</span><span class="footer-chip">Azure · AWS</span><span class="footer-chip">Reproducible</span></div></div></div></footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Custom checkbox toggle
+document.querySelectorAll('.checkbox-item input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    const box = this.nextElementSibling;
+    box.style.background = this.checked ? 'var(--green)' : '';
+    box.style.borderColor = this.checked ? 'var(--green)' : '';
+  });
+});
+</script>
+</body>
+</html>
