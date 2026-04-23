@@ -350,12 +350,38 @@ a { text-decoration: none; color: inherit; }
 /* Prevent body scroll when menu open */
 body.menu-open { overflow: hidden; }
 
+/* ══════════════════ CONSTELLATION GRID ══════════════════ */
+.constellation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.constellation-img {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--white);
+  padding: 16px;
+}
+.constellation-img img {
+  width: 100%;
+  display: block;
+}
+
 /* ══════════════════ RESPONSIVE ══════════════════ */
 @media (max-width: 900px) {
   :root { --section-py: 60px; }
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .constellation-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .constellation-img {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 600px) {
   :root { --section-py: 48px; }
@@ -365,4 +391,7 @@ body.menu-open { overflow: hidden; }
   .btn { padding: 11px 20px; font-size: 0.88rem; }
   .btn-lg { padding: 13px 24px; font-size: 0.93rem; }
   .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+  .constellation-img {
+    max-width: 100%;
+  }
 }
