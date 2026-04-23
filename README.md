@@ -1,8 +1,8 @@
-# BioOmicsAge — Full-Stack Multi-Omics Bioinformatics Services
+# BiOmicAge — Full-Stack Multi-Omics Bioinformatics Services
 
 > From Raw Data to Real Answers. Every Time.
 
-BioOmicsAge is a professional services website for a full-stack multi-omics bioinformatics platform covering proteomics, lipidomics, genomics, metagenomics, single-cell RNA-seq, spatial transcriptomics, and more — reproducible, cloud-native, and AI-assisted.
+BiOmicAge is a professional services website for a full-stack multi-omics bioinformatics platform covering proteomics, lipidomics, genomics, metagenomics, single-cell RNA-seq, spatial transcriptomics, and more — reproducible, cloud-native, and AI-assisted.
 
 ---
 
@@ -52,4 +52,4 @@ website/
 
 ---
 
-© 2026 BioOmicsAge · Bangalore, India
+© 2026 BiOmicAge · Bangalore, India
