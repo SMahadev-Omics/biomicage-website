@@ -362,10 +362,14 @@ body.menu-open { overflow: hidden; }
   border-radius: var(--radius-xl);
   background: var(--white);
   padding: 16px;
+  width: 100%;
 }
 .constellation-img img {
   width: 100%;
+  height: auto;
   display: block;
+  min-height: 260px;
+  object-fit: contain;
 }
 
 /* ══════════════════ RESPONSIVE ══════════════════ */
@@ -376,11 +380,17 @@ body.menu-open { overflow: hidden; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .constellation-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
   }
+  /* Show image ABOVE the text on mobile */
   .constellation-img {
-    max-width: 480px;
-    margin: 0 auto;
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+  .constellation-img img {
+    min-height: 300px;
   }
 }
 @media (max-width: 600px) {
@@ -392,6 +402,9 @@ body.menu-open { overflow: hidden; }
   .btn-lg { padding: 13px 24px; font-size: 0.93rem; }
   .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
   .constellation-img {
-    max-width: 100%;
+    padding: 12px;
+  }
+  .constellation-img img {
+    min-height: 280px;
   }
 }
