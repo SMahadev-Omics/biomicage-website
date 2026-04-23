@@ -305,6 +305,51 @@ a { text-decoration: none; color: inherit; }
 .d4 { animation-delay: 0.40s; }
 .d5 { animation-delay: 0.52s; }
 
+/* ══════════════════ MOBILE NAV MENU ══════════════════ */
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 16px 5% 24px;
+  z-index: 199;
+  flex-direction: column;
+  gap: 4px;
+  animation: fadeIn 0.2s ease;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.nav-mobile-menu ul a {
+  display: block; padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem; font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.2s, background 0.2s;
+}
+.nav-mobile-menu ul a:hover,
+.nav-mobile-menu ul a.active { color: var(--green); background: var(--green-pale); }
+.nav-mobile-menu .mob-cta {
+  margin-top: 12px;
+  display: block; text-align: center;
+  background: var(--green); color: white;
+  border-radius: var(--radius); padding: 12px;
+  font-size: 0.9rem; font-weight: 600;
+  transition: background 0.2s;
+}
+.nav-mobile-menu .mob-cta:hover { background: var(--green-mid); }
+
+/* Hamburger → X animation */
+.nav-hamburger span { transition: all 0.3s ease; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Prevent body scroll when menu open */
+body.menu-open { overflow: hidden; }
+
 /* ══════════════════ RESPONSIVE ══════════════════ */
 @media (max-width: 900px) {
   :root { --section-py: 60px; }
@@ -313,6 +358,11 @@ a { text-decoration: none; color: inherit; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 600px) {
+  :root { --section-py: 48px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .section { padding: var(--section-py) 4%; }
+  .btn { padding: 11px 20px; font-size: 0.88rem; }
+  .btn-lg { padding: 13px 24px; font-size: 0.93rem; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
 }

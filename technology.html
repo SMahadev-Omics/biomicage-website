@@ -161,9 +161,19 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Get a Quote</a>
-    <button class="nav-hamburger"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="technology.html" class="active">Technology</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="mob-cta">Get a Quote</a>
+</div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -357,9 +367,6 @@
     <div class="footer-bottom"><p>© 2026 BiOmicAge · Bangalore, India · All rights reserved</p><div class="footer-chips"><span class="footer-chip">Python · R</span><span class="footer-chip">Nextflow</span><span class="footer-chip">Azure · AWS</span><span class="footer-chip">Reproducible</span></div></div>
   </div>
 </footer>
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
